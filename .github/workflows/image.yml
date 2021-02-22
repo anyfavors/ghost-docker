@@ -6,7 +6,11 @@ name: Image build and push
 # events but only for the main branch
 on:
   push:
-    branches: [ main ]
+    branches:
+      - '**'
+    tags:
+      - 'v*'
+  pull_request:
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
@@ -25,7 +29,6 @@ jobs:
         uses: crazy-max/ghaction-docker-meta@v1
         with:
           images: ghcr.io/anyfavors/ghost-docker # list of Docker images to use as base name for tags
-          tag-sha: true # add git short SHA as Docker tag
           tag-semver: |
             {{version}}
             {{major}}.{{minor}}
