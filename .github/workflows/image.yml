@@ -45,7 +45,7 @@ jobs:
         
       - name: Docker meta
         id: docker_meta
-        uses: crazy-max/ghaction-docker-meta@v3.5.0
+        uses: crazy-max/ghaction-docker-meta@v3.8.0
         with:
           images: ghcr.io/anyfavors/ghost-docker # list of Docker images to use as base name for tags
           tag-semver: |
