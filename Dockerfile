@@ -1,4 +1,4 @@
-FROM alpine:3.15.2 as latest
+FROM alpine:3.17.0 as latest
 
 ENV TEMP=/tmp \
     ENV=/etc/profile \
